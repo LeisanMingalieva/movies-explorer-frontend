@@ -1,0 +1,36 @@
+.navTab {
+    max-width: 1280px;
+    min-height: 66px;
+    background-color: #F5F5F5;
+}
+
+.navTab__links {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin: 0;
+    padding-top: 24px;
+}
+
+.navTab__link {
+    color: #000;
+    font-family: Inter;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 123%;
+    text-decoration-line: underline;
+}
+
+@media (max-width: 460px) {
+    .navTab__links {
+        gap: 24px;        
+        padding-top: 24px;
+    }
+
+    .navTab__link {
+        text-align: center;
+        font-size: 11px;
+        line-height: 16px;
+    }
+}
