@@ -5,8 +5,8 @@ function AboutProject() {
     return (
         <section className="about-project" id='about-project'>
             <h2 className="about-project__title">О проекте</h2>
-            <div class="about-project__description">
-                <ul class="about-project__content">
+            <div className="about-project__description">
+                <ul className="about-project__content">
                     <li className="about-project__item">
                         <h3 className="about-project__item-title">Дипломный проект включал 5 этапов</h3>
                         <p className="about-project__item-text">Составление плана, работу над бэкендом, вёрстку, добавление функциональности и финальные доработки.</p>

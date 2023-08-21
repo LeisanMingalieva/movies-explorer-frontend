@@ -1,0 +1,176 @@
+.about {
+    padding: 110px 70px 101px;
+    color: #000;
+}
+
+.about__title {
+    font-family: Inter;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: -0.88px;
+    border-bottom: 1px solid #000;
+    margin: 0;
+    padding: 0 0 23px;
+}
+
+.about__content {
+    display: flex;
+    column-gap: 270px;
+    justify-content: space-between;
+}
+
+.about__description {
+    display: flex;
+    flex-direction: column;
+}
+
+.about__name {
+    font-family: Inter;
+    font-size: 50px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 116%;
+    letter-spacing: -2px;
+    margin: 0;
+    padding: 66px 0 0;
+}
+
+.about__job {
+    font-feature-settings: 'clig' off, 'liga' off;
+    font-family: Inter;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 111.111%;
+    padding: 18px 0 0;
+    margin: 0;
+}
+
+.about__text {
+    font-feature-settings: 'clig' off, 'liga' off;
+    font-family: Inter;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 157.143%;
+    padding: 26px 0 0;
+    margin: 0;
+}
+
+.about__link {
+    font-family: Inter;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    padding: 99px 0 0;
+    text-decoration: none;
+}
+
+.about__link:hover {
+    opacity: 0.7;
+    cursor: pointer;
+}
+
+.about__photo {
+    width: 270px;
+    height: 327px;
+    border-radius: 10px;
+    margin: 0;
+    object-fit: cover;
+    object-position: center;
+    padding: 66px 0 0;
+}
+
+@media (max-width: 920px) {
+    .about__content {
+        column-gap: 90px;
+    }
+}
+
+@media (max-width: 768px) {
+    .about {
+        padding: 90px 50px 91px;
+    }
+
+    .about__content {
+        column-gap: 49px;
+    }
+
+    .about__name {
+        font-size: 40px;
+        line-height: 100%;
+        letter-spacing: -1.6px;        
+    }
+
+    .about__job {
+        font-size: 12px;
+        line-height: 150%;
+        padding: 16px 0 0;
+    }
+
+    .about__text {
+        font-size: 12px;
+        line-height: 150%;
+        padding: 20px 0 0;
+    }
+
+    .about__photo {
+        width: 255px;
+        height: 307px;
+    }
+
+    .about__link {
+        padding: 87px 0 0;
+    }
+}
+
+@media (max-width: 460px) {
+    .about {
+        padding: 70px 14px 70px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .about__content {
+        flex-direction: column-reverse;
+        justify-content: start;
+        column-gap: 0;
+    }
+
+    .about__title {
+        font-size: 18px;
+        letter-spacing: -0.72px;
+        margin: 0;
+        padding: 0 0 28px 0;
+    }
+    
+    .about__name {
+        font-size: 30px;
+        line-height: normal;
+        letter-spacing: -1.2px;      
+    }
+
+    .about__job {
+        font-size: 11px;
+        line-height: 145.455%;
+        padding: 20px 0 0;
+    }
+
+    .about__text {
+        font-size: 11px;
+        line-height: 145.455%;
+        padding: 20px 0 0;
+    }
+
+    .about__link {
+        padding: 40px 0 0;
+    }
+
+    .about__photo {
+        width: 292px;
+        height: 352px;
+    }
+}
