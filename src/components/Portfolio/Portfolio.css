@@ -37,7 +37,7 @@
 
 .portfolio__item:last-child {
     border-bottom: none;
-    padding: 0;
+    padding-top: 20px;
 }
 
 .portfolio__link:hover {
@@ -65,10 +65,5 @@
         font-size: 18px;
         line-height: 155.556%;
         letter-spacing: -0.72px;
-    }
-
-    .portfolio__item:last-child {
-        border-bottom: none;
-        padding-top: 20px;
     }
 }
