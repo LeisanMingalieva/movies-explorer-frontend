@@ -66,4 +66,9 @@
         line-height: 155.556%;
         letter-spacing: -0.72px;
     }
+
+    .portfolio__item:last-child {
+        border-bottom: none;
+        padding-top: 20px;
+    }
 }
