@@ -5,6 +5,7 @@
 // import Movies from '../Movies/Movies';
 import Footer from "../Footer/Footer";
 import Main from "../Main/Main";
+import NotFound from "../NotFoundPage/NotFound";
 function App() {
   //const [isLoggedIn, setIsLoggedIn] = useState(true);
 
@@ -16,6 +17,7 @@ function App() {
       <Footer /> */}
       <Main />
       <Footer />
+      <NotFound />
     </div>
   );
 }
