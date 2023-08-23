@@ -5,6 +5,7 @@ import './App.css';
 // import Movies from '../Movies/Movies';
 import Footer from "../Footer/Footer";
 import Main from "../Main/Main";
+import Register from '../Register/Register';
 function App() {
   //const [isLoggedIn, setIsLoggedIn] = useState(true);
 
@@ -15,6 +16,7 @@ function App() {
       </Routes> */}
       <Main />
       <Footer />
+      <Register />
     </div>
   );
 }
