@@ -1,12 +1,10 @@
 .about {
-    padding: 110px 70px 101px;
+    padding: 115px 70px 101px;
     color: #000;
 }
 
 .about__title {
-    font-family: Inter;
     font-size: 22px;
-    font-style: normal;
     font-weight: 400;
     line-height: normal;
     letter-spacing: -0.88px;
@@ -27,9 +25,7 @@
 }
 
 .about__name {
-    font-family: Inter;
     font-size: 50px;
-    font-style: normal;
     font-weight: 400;
     line-height: 116%;
     letter-spacing: -2px;
@@ -38,10 +34,7 @@
 }
 
 .about__job {
-    font-feature-settings: 'clig' off, 'liga' off;
-    font-family: Inter;
     font-size: 18px;
-    font-style: normal;
     font-weight: 500;
     line-height: 111.111%;
     padding: 18px 0 0;
@@ -49,10 +42,7 @@
 }
 
 .about__text {
-    font-feature-settings: 'clig' off, 'liga' off;
-    font-family: Inter;
     font-size: 14px;
-    font-style: normal;
     font-weight: 400;
     line-height: 157.143%;
     padding: 26px 0 0;
@@ -60,9 +50,7 @@
 }
 
 .about__link {
-    font-family: Inter;
     font-size: 14px;
-    font-style: normal;
     font-weight: 500;
     line-height: normal;
     padding: 99px 0 0;
@@ -150,7 +138,8 @@
     .about__name {
         font-size: 30px;
         line-height: normal;
-        letter-spacing: -1.2px;      
+        letter-spacing: -1.2px;
+        padding: 40px 0 0;   
     }
 
     .about__job {
@@ -172,5 +161,6 @@
     .about__photo {
         width: 292px;
         height: 352px;
+        padding: 60px 0 0;
     }
 }

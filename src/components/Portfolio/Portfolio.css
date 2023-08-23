@@ -1,14 +1,11 @@
 .portfolio {
-    padding: 0 70px 125px;
+    padding: 0 70px 106px;
     color: #000;
 }
 
 .portfolio__title {
     color: #A0A0A0;
-    font-feature-settings: 'clig' off, 'liga' off;
-    font-family: Inter;
     font-size: 18px;
-    font-style: normal;
     font-weight: 400;
     line-height: 111.111%;
     margin: 0;
@@ -22,9 +19,7 @@
 }
 
 .portfolio__item {
-    font-family: Inter;
     font-size: 30px;
-    font-style: normal;
     font-weight: 400;
     line-height: 166.667%;
     letter-spacing: -1.2px;
@@ -47,7 +42,7 @@
 
 @media (max-width: 768px) {
     .portfolio {
-        padding: 0 50px 90px;
+        padding: 0 50px 70px;
     }
     .portfolio__item {
         font-size: 28px;
@@ -59,11 +54,21 @@
 
 @media (max-width: 510px) {
     .portfolio {
-        padding: 0 14px 70px;
+        padding: 0 14px 51px;
     }
+    
+    .portfolio__items {        
+        padding: 0;
+    }
+
     .portfolio__item {
         font-size: 18px;
         line-height: 155.556%;
         letter-spacing: -0.72px;
+    }
+
+    .portfolio__title {
+        font-size: 14px;
+        line-height: 142.857%;
     }
 }

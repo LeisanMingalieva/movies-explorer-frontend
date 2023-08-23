@@ -1,11 +1,10 @@
 // import { useState } from 'react';
-// import './App.css';
+import './App.css';
 // import { Route, Routes } from 'react-router-dom';
 // import Header from '../Header';
 // import Movies from '../Movies/Movies';
 import Footer from "../Footer/Footer";
 import Main from "../Main/Main";
-import NotFound from "../NotFoundPage/NotFound";
 function App() {
   //const [isLoggedIn, setIsLoggedIn] = useState(true);
 
@@ -13,11 +12,9 @@ function App() {
     <div className="page">
       {/* <Routes>
         <Route path="/" element={<Main />} />
-      </Routes>
-      <Footer /> */}
+      </Routes> */}
       <Main />
       <Footer />
-      <NotFound />
     </div>
   );
 }
