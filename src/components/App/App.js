@@ -6,6 +6,7 @@ import './App.css';
 import Footer from "../Footer/Footer";
 import Main from "../Main/Main";
 import Register from '../Register/Register';
+import Login from '../Login/Login';
 function App() {
   //const [isLoggedIn, setIsLoggedIn] = useState(true);
 
@@ -16,7 +17,8 @@ function App() {
       </Routes> */}
       {/* <Main />
       <Footer /> */}
-      <Register buttonText="Зарегистрироваться"/>
+      {/* <Register buttonText="Зарегистрироваться"/> */}
+      <Login buttonText="Войти"></Login>
     </div>
   );
 }
