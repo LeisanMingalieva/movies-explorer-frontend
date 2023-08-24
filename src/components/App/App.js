@@ -14,9 +14,9 @@ function App() {
       {/* <Routes>
         <Route path="/" element={<Main />} />
       </Routes> */}
-      <Main />
-      <Footer />
-      <Register />
+      {/* <Main />
+      <Footer /> */}
+      <Register buttonText="Зарегистрироваться"/>
     </div>
   );
 }
