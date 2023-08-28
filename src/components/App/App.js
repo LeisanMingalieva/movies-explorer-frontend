@@ -9,6 +9,7 @@ import './App.css';
 // import Login from '../Login/Login';
 // import Profile from '../Profile/Profile';
 import SearchForm from '../SearchForm/SearchForm';
+import MoviesCardList from '../MoviesCardList/MoviesCardList';
 function App() {
   //const [isLoggedIn, setIsLoggedIn] = useState(true);
 
@@ -23,6 +24,7 @@ function App() {
       {/* <Login buttonText="Войти"></Login> */}
       {/* <Profile name="Виталий"/> */}
       <SearchForm />
+      <MoviesCardList />
     </div>
   );
 }

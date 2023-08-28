@@ -1,0 +1,63 @@
+.movie {
+    max-width: 270px;
+    min-height: 218px;
+    box-shadow: 0px 16px 24px rgba(0, 0, 0, .05);
+    border-radius: 10px 10px 0 0;
+}
+
+.movie__image {
+    width: 100%;
+    height: 151px;    
+    background-position: center;
+    object-fit: cover;
+}
+
+.movie__description {
+    display: flex;
+    align-items: center;
+    margin: 14px 12px 10px;
+    justify-content: space-between;
+    padding: 0;
+}
+
+.movie__title {
+    color: #000;
+    font-size: 13px;
+    font-weight: 500;
+    line-height: normal;
+    max-width: 206px;
+    margin: 0;
+}
+
+.movie__button {
+    width: 16px;
+    height: 16px;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    background-image: url('../../images/save8d.png');
+    background-color: #fff;
+    background-repeat: no-repeat;
+    background-position: center 25%;
+    box-shadow: none;    
+}
+
+.movie__button:hover {
+    opacity: 0.8;
+}
+
+.movie__button_saved {
+    background-image: url('../../images/save8.png');
+}
+
+.movie__button_delete {
+    background-image: url('../../images/delete.png');
+}
+
+.movie__duration {
+    color: #A0A0A0;
+    font-size: 11px;
+    font-weight: 400;
+    line-height: normal;
+    margin: 0 0 14px 12px;
+}
