@@ -7,7 +7,8 @@ import './App.css';
 // import Main from "../Main/Main";
 // import Register from '../Register/Register';
 // import Login from '../Login/Login';
-import Profile from '../Profile/Profile';
+// import Profile from '../Profile/Profile';
+import SearchForm from '../SearchForm/SearchForm';
 function App() {
   //const [isLoggedIn, setIsLoggedIn] = useState(true);
 
@@ -20,7 +21,8 @@ function App() {
       <Footer /> */}
       {/* <Register buttonText="Зарегистрироваться"/> */}
       {/* <Login buttonText="Войти"></Login> */}
-      <Profile name="Виталий"/>
+      {/* <Profile name="Виталий"/> */}
+      <SearchForm />
     </div>
   );
 }
