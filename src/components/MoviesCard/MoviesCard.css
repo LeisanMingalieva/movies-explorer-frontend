@@ -15,7 +15,7 @@
 .movie__description {
     display: flex;
     align-items: center;
-    margin: 14px 12px 10px;
+    margin: 11px 12px 10px;
     justify-content: space-between;
     padding: 0;
 }
@@ -60,4 +60,29 @@
     font-weight: 400;
     line-height: normal;
     margin: 0 0 14px 12px;
+}
+
+@media (max-width: 768px) {
+    .movie {
+        max-width: 339px;
+        min-height: 257px;
+    }
+
+    .movie__image {
+        width: 100%;
+        height: 190px;
+    } 
+}
+
+@media (max-width: 460px) {
+    .movie {
+        max-width: 300px;
+        min-height: 235px;
+    }
+
+    .movie__image {
+        width: 100%;
+        height: 168px;
+    } 
+
 }

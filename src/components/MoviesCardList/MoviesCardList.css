@@ -41,10 +41,8 @@
     }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 460px) {
     .movies-list {
-        flex-direction: column;
-        justify-content: center;
         align-items: center;
         padding: 50px 10px 80px;
         row-gap: 20px;
