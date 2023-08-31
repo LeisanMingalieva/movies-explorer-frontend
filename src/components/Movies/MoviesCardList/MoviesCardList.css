@@ -34,6 +34,7 @@
         padding: 80px 30px;
         column-gap: 30px;
         row-gap: 36px;
+        justify-content: center;
     }
 
     .movies-list__button {

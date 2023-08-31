@@ -1,6 +1,6 @@
 import React from "react";
 import './AboutMe.css';
-import StudentPhoto from '../../images/studentPhoto.jpg'
+import StudentPhoto from '../../../images/studentPhoto.jpg'
 
 function AboutMe() {
     return (

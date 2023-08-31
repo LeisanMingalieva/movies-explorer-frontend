@@ -1,30 +1,28 @@
-// import { useState } from 'react';
+import React from 'react';
+import { Route, Routes } from 'react-router-dom';
+import Main from '../Main/Main'
+import Movies from '../Movies/Movies';
+import NotFoundPage from '../NotFoundPage/NotFound';
+import SavedMovies from '../SavedMovies/SavedMovies';
+import Register from '../Register/Register';
+import Login from '../Login/Login';
+import Profile from '../Profile/Profile';
 import './App.css';
-// import { Route, Routes } from 'react-router-dom';
-// import Header from '../Header';
-// import Movies from '../Movies/Movies';
-// import Footer from "../Footer/Footer";
-// import Main from "../Main/Main";
-// import Register from '../Register/Register';
-// import Login from '../Login/Login';
-// import Profile from '../Profile/Profile';
-import SearchForm from '../SearchForm/SearchForm';
-import MoviesCardList from '../MoviesCardList/MoviesCardList';
+
 function App() {
-  //const [isLoggedIn, setIsLoggedIn] = useState(true);
+  
 
   return (
     <div className="page">
-      {/* <Routes>
-        <Route path="/" element={<Main />} />
-      </Routes> */}
-      {/* <Main />
-      <Footer /> */}
-      {/* <Register buttonText="Зарегистрироваться"/> */}
-      {/* <Login buttonText="Войти"></Login> */}
-      {/* <Profile name="Виталий"/> */}
-      <SearchForm />
-      <MoviesCardList />
+      <Routes>
+        <Route path='/' element={<Main />} />
+        <Route path='movies' element={ <Movies /> } />
+        <Route path='sign-up' element={ <Register buttonText='Зарегистрироваться'/> } />
+        <Route path='sign-in' element={ <Login buttonText='Войти'/> } />
+        <Route path='saved-movies' element={ <SavedMovies/ >} />
+        <Route path='profile' element={ <Profile /> } />
+        <Route path='*' element={ <NotFoundPage /> } />
+      </Routes>
     </div>
   );
 }

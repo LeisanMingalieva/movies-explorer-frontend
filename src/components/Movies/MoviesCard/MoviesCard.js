@@ -1,5 +1,5 @@
 import React from "react";
-import image from '../../images/movie-pic.jpg';
+import image from '../../../images/movie-pic.jpg';
 import {useLocation} from "react-router-dom";
 
 import './MoviesCard.css';

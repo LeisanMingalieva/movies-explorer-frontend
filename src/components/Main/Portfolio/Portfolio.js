@@ -1,6 +1,6 @@
 import React from "react";
 import './Portfolio.css';
-import Link from '../../images/strelka.svg'
+import Link from '../../../images/strelka.svg'
 
 function Portfolio() {
     return (
