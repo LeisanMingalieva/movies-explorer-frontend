@@ -35,7 +35,7 @@
     border: none;
     cursor: pointer;
     padding: 0;
-    background-image: url('../../../images/save8d.png');
+    background-image: url('../../../images/save8d.svg');
     background-color: #fff;
     background-repeat: no-repeat;
     background-position: center 25%;
@@ -47,11 +47,11 @@
 }
 
 .movie__button_saved {
-    background-image: url('../../../images/save8.png');
+    background-image: url('../../../images/save8.svg');
 }
 
 .movie__button_delete {
-    background-image: url('../../../images/delete.png');
+    background-image: url('../../../images/delete.svg');
 }
 
 .movie__duration {

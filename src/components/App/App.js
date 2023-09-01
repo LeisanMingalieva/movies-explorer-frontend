@@ -17,8 +17,8 @@ function App() {
       <Routes>
         <Route path='/' element={<Main />} />
         <Route path='movies' element={ <Movies /> } />
-        <Route path='sign-up' element={ <Register buttonText='Зарегистрироваться'/> } />
-        <Route path='sign-in' element={ <Login buttonText='Войти'/> } />
+        <Route path='signup' element={ <Register buttonText='Зарегистрироваться'/> } />
+        <Route path='signin' element={ <Login buttonText='Войти'/> } />
         <Route path='saved-movies' element={ <SavedMovies/ >} />
         <Route path='profile' element={ <Profile /> } />
         <Route path='*' element={ <NotFoundPage /> } />

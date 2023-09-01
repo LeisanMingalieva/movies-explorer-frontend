@@ -60,6 +60,11 @@
     line-height: normal;
 }
 
+.register__input:focus {
+    color: rgb(250, 130, 18);
+    outline: auto;
+}
+
 .register__span {
     font-style: normal;
     font-weight: 400;

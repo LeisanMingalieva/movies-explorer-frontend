@@ -7,7 +7,7 @@ function SearchForm(props) {
             <section className="search-form">
                 <div className="search-form__container">
                     <input className="search-form__input" placeholder="Фильм" required></input>
-                    <button className="search-form__button"></button>                   
+                    <button className="search-form__button" type="button"></button>                   
                 </div>
                 <FilterCheckbox />
             </section>

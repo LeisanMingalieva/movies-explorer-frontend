@@ -3,7 +3,7 @@ import './Footer.css';
 
 function Footer() {
     return (
-        <section className="footer">
+        <footer className="footer">
             <p className="footer__title">Учебный проект Яндекс.Практикум х BeatFilm.</p>   
             <div className="footer__container">
                 <p className="footer__date">&#169; {new Date().getFullYear()}</p>
@@ -16,7 +16,7 @@ function Footer() {
                     </li>
                 </ul>
             </div>
-        </section>        
+        </footer>        
     )
 }
 

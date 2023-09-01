@@ -45,7 +45,9 @@
 }
 
 .profile__links {
-    margin: 202px 0 0;
+    margin: 188px 0 0;
+    display: flex;
+    flex-direction: column;
 }
 
 .profile__link {
@@ -62,7 +64,8 @@
     font-size: 13px;
     font-style: normal;
     font-weight: 500;
-    line-height: normal;    
+    line-height: normal;
+    text-decoration: none;
 }
 
 .profile__link:hover {
@@ -71,19 +74,24 @@
 }
 
 @media (max-width: 768px) {
+    .profile {
+        padding: 230px 0 0 0;
+    }
+
     .profile__container {
         margin: 96px 0 0;
         width: 100%;
     }
 
     .profile__links {
-        margin: 192px 0 0;
+        margin: 180px 0 0;
     }
 }
 
 @media (max-width: 460px) {
     .profile {
         width: 260px;
+        padding: 64px 0 0 0;
     }
 
     .profile__container {
@@ -91,7 +99,7 @@
     }
 
     .profile__links {
-        margin: 360px 0 0;
+        margin: 350px 0 0;
     }
 
     .profile__link {

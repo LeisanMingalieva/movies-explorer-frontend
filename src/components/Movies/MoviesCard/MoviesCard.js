@@ -16,7 +16,7 @@ function MoviesCard() {
     <div className='movie'>
       <img className='movie__image' src={image} alt='Обложка фильма'/>
       <div className='movie__description'>
-        <p className='movie__title'>33 слова о дизайне</p>
+        <h2 className='movie__title'>33 слова о дизайне</h2>
         {
           moviePath && (
             <button className={`movie__button ${isSaved ? 'movie__button_saved' : ''}`} onClick={handleSaved}/>
