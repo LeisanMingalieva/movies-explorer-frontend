@@ -25,6 +25,10 @@
     height: 38px;
 }
 
+.header__logo:hover {
+    opacity: 0.8;
+}
+
 .header__profile-nav {
     display: flex;
     gap: 30px;
@@ -70,7 +74,7 @@
 
 @media (max-width: 768px) {
     .header__container {
-        padding: 18px 30px;
+        padding: 16px 30px;
     }
 
     .header__button_account {
@@ -83,8 +87,12 @@
         padding-top: 0;
     }
 
+    .header__profile-nav {
+        gap: 23px;
+    }
+
     .header__container {
-        padding: 18px 14px;
+        padding: 16px 14px;
     }
 
     .header__button {

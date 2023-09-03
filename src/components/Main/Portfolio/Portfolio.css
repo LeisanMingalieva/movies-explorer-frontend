@@ -55,6 +55,12 @@
         letter-spacing: -1.12px;
         border-bottom: 1px solid #E6E6E6;
     }
+
+    .portfolio__link {
+        font-size: 28px;
+        line-height: 178.571%;
+        letter-spacing: -1.12px;        
+    }
 }
 
 @media (max-width: 510px) {
@@ -75,5 +81,11 @@
     .portfolio__title {
         font-size: 14px;
         line-height: 142.857%;
+    }
+
+    .portfolio__link {
+        font-size: 18px;
+        line-height: 155.556%;
+        letter-spacing: -0.72px;        
     }
 }

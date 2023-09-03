@@ -5,10 +5,14 @@ import './Navigation.css';
 function Navigation() {
     return (
         <nav className="navigation">
-            <div className="navigation__container">
-                <NavLink className="navigation__link" to="/movies">Фильмы</NavLink>
-                <NavLink className="navigation__link" to="/saved-movies">Сохранённые фильмы</NavLink>
-            </div>
+            <ul className="navigation__container">
+                <li>
+                    <NavLink className="navigation__link" to="/movies">Фильмы</NavLink>
+                </li>
+                <li>
+                    <NavLink className="navigation__link" to="/saved-movies">Сохранённые фильмы</NavLink>
+                </li>
+            </ul>
         </nav>
     )
 }

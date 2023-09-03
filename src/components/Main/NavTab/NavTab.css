@@ -8,7 +8,11 @@
     justify-content: center;
     gap: 40px;
     margin: 0;
-    padding-top: 24px;
+    padding: 24px 0 0 0;
+}
+
+.navTab__li {
+    list-style-type: none;
 }
 
 .navTab__link {
@@ -24,10 +28,16 @@
     cursor: pointer;
 }
 
+@media (max-width: 768px) {
+    .navTab__links {
+        padding: 20px 0 0 0;
+    }
+}
+
 @media (max-width: 460px) {
     .navTab__links {
         gap: 24px;        
-        padding-top: 24px;
+        padding-top: 20px;
     }
 
     .navTab__link {

@@ -52,6 +52,7 @@
 
 .movie__button_delete {
     background-image: url('../../../images/delete.svg');
+    background-size: 16px 16px;
 }
 
 .movie__duration {

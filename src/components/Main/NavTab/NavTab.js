@@ -4,11 +4,11 @@ import './NavTab.css';
 function NavTab() {
     return (
         <section className="navTab">
-            <nav className="navTab__links">
-                <a href="#about-project" className="navTab__link">О проекте</a>
-                <a href="#techs" className="navTab__link">Технологии</a>
-                <a href="#student" className="navTab__link">Студент</a>
-        </nav>
+            <ul className="navTab__links">
+                <li  className="navTab__li"><a className="navTab__link" href="#about-project">О проекте</a></li>
+                <li className="navTab__li"><a className="navTab__link" href="#techs">Технологии</a></li>
+                <li className="navTab__li"><a className="navTab__link" href="#student">Студент</a></li>
+            </ul>
         </section>        
     )
 }

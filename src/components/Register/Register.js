@@ -27,8 +27,6 @@ function Register({buttonText}) {
                             id="email"
                             type="email"
                             placeholder="email@yandex.ru"
-                            minLength={2}
-                            maxLength={40}
                         />
                         <span className="register__span"></span>
                     </div>

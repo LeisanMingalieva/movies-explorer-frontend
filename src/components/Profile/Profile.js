@@ -12,23 +12,29 @@ function Profile(props) {
             <main>
                 <section className="profile">
                     <h1 className="profile__title">{`Привет, ${props.name}!`}</h1>
-                    <div className="profile__container">
-                        <div className="profile__label">
-                            <p className="profile__label-text" placeholder="Имя">Имя</p>
-                            <p className="profile__label-text">Виталий</p>
-                        </div>
-                        <div className="profile__label">
-                            <p className="profile__label-text" placeholder="Email">E-mail</p>
-                            <p className="profile__label-text">pochta@yandex.ru</p>
-                      </div>
+                    <form className="profile__form">
+                        <input 
+                            className="profile__input"
+                            placeholder="Имя"
+                            type="name"
+                            id="profile-name"
+                            minLength={2}
+                            maxLength={40}
+                        />
+                        <input
+                            className="profile__input"
+                            placeholder="E-mail"
+                            type="email"
+                            id="profile-email"
+                        />
                         <div className="profile__links">
-                            <p className="profile__link">Редактировать</p>
-                            <NavLink to="/" className="profile__link profile__link_logout">
-                                Выйти из аккаунта
+                            <button className="profile__link" type="button">Редактировать</button>
+                            <NavLink to="/" className="profile__link">
+                                <button type="button" className="profile__link_logout">Выйти из аккаунта</button>
                             </NavLink>
                             
                         </div>                    
-                    </div>
+                    </form>
                  </section>
             </main>        
         </>

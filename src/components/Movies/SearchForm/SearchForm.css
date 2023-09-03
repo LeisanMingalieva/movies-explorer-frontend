@@ -1,7 +1,7 @@
 .search-form {
     display: flex;
     flex-direction: column;
-    padding: 60px 70px 69px;
+    padding: 50px 70px 69px;
 }
 
 .search-form__container {
@@ -27,6 +27,11 @@
     border: 1px solid #FF6838;
 }
 
+.search-form__input::placeholder {
+    font-size: 13px;
+    line-height: 17px;
+}
+
 .search-form__button {
     width: 80px;
     height: 34px;
@@ -50,12 +55,12 @@
 
 @media (max-width: 768px) {
     .search-form {
-        padding: 80px 30px 51px;
+        padding: 79px 30px 51px;
     }
 }
 
 @media (max-width: 460px) {
     .search-form {
-        padding: 80px 14px 49px;
+        padding: 79px 14px 49px;
     }
 }

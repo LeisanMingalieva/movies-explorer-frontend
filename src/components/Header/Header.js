@@ -21,15 +21,15 @@ function Header({isLoggedIn}) {
           {isLoggedIn ? <Navigation /> : null}
           {isLoggedIn ? (
             <NavLink to="/profile">
-              <button className="header__button header__button_account">Аккаунт</button>
+              <button className="header__button header__button_account" type="button">Аккаунт</button>
             </NavLink>        
           ) : (
             <nav className="header__profile-nav">
               <NavLink to="/signup">
-                <button className="header__button header__button_register">Регистрация</button>
+                <button className="header__button header__button_register" type="button">Регистрация</button>
               </NavLink>
               <NavLink to="/signin">
-                <button className="header__button header__button_login">Войти</button>
+                <button className="header__button header__button_login" type="button">Войти</button>
               </NavLink>         
             </nav>
           )}
