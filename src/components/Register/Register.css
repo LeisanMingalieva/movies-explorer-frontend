@@ -1,4 +1,4 @@
-.register__wrapper {
+.register {
     width: 396px;
     height: 100%;
     display: flex;
@@ -128,13 +128,13 @@
 }
 
 @media (max-width: 768px) {
-    .register__wrapper {
+    .register {
         padding: 232px 0;
     }
 }
 
 @media (max-width: 460px) {
-    .register__wrapper {
+    .register {
         width: 260px;
         margin: 0 auto;
         padding: 56px 0 30px;

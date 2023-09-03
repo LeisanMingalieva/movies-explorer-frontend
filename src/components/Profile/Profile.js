@@ -30,7 +30,7 @@ function Profile(props) {
                         <div className="profile__links">
                             <button className="profile__link" type="button">Редактировать</button>
                             <NavLink to="/" className="profile__link">
-                                <button type="button" className="profile__link_logout">Выйти из аккаунта</button>
+                                <button type="button" className="profile__link-logout">Выйти из аккаунта</button>
                             </NavLink>
                             
                         </div>                    

@@ -12,14 +12,13 @@ function BurgerMenu() {
 
   return (
     <div className={`burger ${isOpened ? "open" : ""}`}>
-      <button className="burger__button">
+      <button className="burger__button" type="button">
         <img
-        onClick={toggleBurger}
-        src={burgerIcon}
-        alt="меню"
-      />
+          onClick={toggleBurger}
+          src={burgerIcon}
+          alt="меню"
+        />
       </button>
-
       <div
         className={`burger__overlay ${isOpened ? "open" : ""}`}
         onClick={toggleBurger}

@@ -3,12 +3,12 @@ import './FilterCheckbox.css';
 
 function FilterCheckbox(props) {
     return (
-            <div className="filter__container">
-                <label className="filter">
+            <div className="filter">
+                <form className="filter__container">
                     <input className="filter__checkbox" type="checkbox"></input>
                     <span className="filter__tumbler"></span>
                     <span className="filter__text">Короткометражки</span>
-                </label>               
+                </form>               
             </div>
     )
 }

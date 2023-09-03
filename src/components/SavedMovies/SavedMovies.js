@@ -13,8 +13,8 @@ function SavedMovies() {
             <main className="main">
                 <SearchForm/>
                 <MoviesCardList/>
-                <Footer/>
             </main>
+            <Footer/>
         </>
     )
 }

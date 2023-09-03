@@ -6,7 +6,7 @@ import logo from '../../images/logo.svg';
 function Login({buttonText}) {
     return (
       <main>
-        <section className="login__wrapper">
+        <section className="login">
             <Link to="/" className="login__logo" src={logo} alt="Логотип"></Link>
             <h1 className="login__title">Рады видеть!</h1>
             <form className="login__form" name="register__form">

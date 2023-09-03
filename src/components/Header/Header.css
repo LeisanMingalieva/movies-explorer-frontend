@@ -43,6 +43,9 @@
     text-align: center;
     cursor: pointer;
     background-color: inherit;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .header__button_account {
@@ -55,14 +58,11 @@
 .header__button_login {
     border-radius: 3px;
     background-color: #2BE080;
-    font-size: 12px;
-    color: #000;
     font-weight: 500;
     line-height: 16px;
 }
 
 .header__button_register {
-    font-size: 12px;
     color: #fff;
     background-color: inherit;
     padding: 0;
