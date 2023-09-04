@@ -7,7 +7,7 @@ function Register({buttonText}) {
     return (
         <main>
             <section className="register">
-                <Link to="/" className="register__logo" src={logo} alt="Логотип"></Link>
+                <Link to="/" className="register__logo" href={logo}></Link>
                 <h1 className="register__title">Добро пожаловать!</h1>
                 <form className="register__form" name="register__form">
                     <div className="register__container">

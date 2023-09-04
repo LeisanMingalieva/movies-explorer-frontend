@@ -16,7 +16,7 @@ function Profile(props) {
                         <input 
                             className="profile__input"
                             placeholder="Имя"
-                            type="name"
+                            type="text"
                             id="profile-name"
                             minLength={2}
                             maxLength={40}
@@ -29,8 +29,8 @@ function Profile(props) {
                         />
                         <div className="profile__links">
                             <button className="profile__link" type="button">Редактировать</button>
-                            <NavLink to="/" className="profile__link">
-                                <button type="button" className="profile__link-logout">Выйти из аккаунта</button>
+                            <NavLink to="/" className="profile__link profile__link-logout">
+                                Выйти из аккаунта
                             </NavLink>
                             
                         </div>                    

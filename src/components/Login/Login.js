@@ -7,7 +7,7 @@ function Login({buttonText}) {
     return (
       <main>
         <section className="login">
-            <Link to="/" className="login__logo" src={logo} alt="Логотип"></Link>
+            <Link to="/" className="login__logo" href={logo}></Link>
             <h1 className="login__title">Рады видеть!</h1>
             <form className="login__form" name="register__form">
                 <div className="login__container">
