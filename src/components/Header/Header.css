@@ -53,6 +53,8 @@
     background-color: #F9F9F9;
     font-size: 14px;
     width: 100px;
+    text-decoration: none;
+    color: #000;
 }
 
 .header__button_login {
@@ -87,10 +89,6 @@
         padding-top: 0;
     }
 
-    .header__profile-nav {
-        gap: 23px;
-    }
-
     .header__container {
         padding: 16px 14px;
     }
@@ -98,14 +96,10 @@
     .header__button {
         width: 54px;
         height: 26px;
-    }
-
-    .header__button_register {
         font-size: 10px;
     }
-
-    .header__button_login {
-        font-size: 10px;
-        padding: 5px 12px;
-    }
+    
+    .header__profile-nav {
+		gap: 14px;
+	}
 }
