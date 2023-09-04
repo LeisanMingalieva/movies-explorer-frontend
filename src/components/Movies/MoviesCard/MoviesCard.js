@@ -1,10 +1,9 @@
 import React from "react";
-import image from '../../../images/movie-pic.jpg';
-import {useLocation} from "react-router-dom";
+import { useLocation } from "react-router-dom";
 
 import './MoviesCard.css';
 
-function MoviesCard() {
+function MoviesCard({movie}) {
   const url = useLocation();
   const moviePath = url.pathname === '/movies';
   const [isSaved, setIsSaved] = React.useState(true);
@@ -15,11 +14,11 @@ function MoviesCard() {
   return (
     <ul className='movie'>
       <li>
-       <img className='movie__image' src={image} alt='Обложка фильма'/>
+       <img className='movie__image' src={movie.thumbnail} alt={movie.nameRU}/>
       </li>
       <li>
         <div className='movie__description'>
-        <h2 className='movie__title'>33 слова о дизайне</h2>
+        <h2 className='movie__title'>{movie.nameRU}</h2>
           {
             moviePath && (
               <button className={`movie__button ${isSaved ? 'movie__button_saved' : ''}`} type="button" onClick={handleSaved}/>
@@ -33,7 +32,7 @@ function MoviesCard() {
         </div>        
       </li>
       <li>
-        <p className='movie__duration'>1ч42м</p>
+        <p className='movie__duration'>{movie.duration}</p>
       </li>      
     </ul>
   )

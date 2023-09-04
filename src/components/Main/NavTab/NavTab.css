@@ -30,14 +30,14 @@
 
 @media (max-width: 768px) {
     .navTab__links {
-        padding: 20px 0 0 0;
+        padding: 23px 0 0 0;
     }
 }
 
 @media (max-width: 460px) {
     .navTab__links {
         gap: 24px;        
-        padding-top: 20px;
+        padding-top: 22px;
     }
 
     .navTab__link {
