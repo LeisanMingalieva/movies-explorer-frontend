@@ -1,0 +1,34 @@
+.navigation {
+    display: flex;
+    justify-content: center;
+}
+
+.navigation__container {
+    list-style-type: none;
+    display: flex;
+    gap: 16px;
+    padding-left: 58px;
+}
+
+.navigation__link {
+    font-size: 13px;
+    font-weight: 400;
+    text-decoration: none;
+    color: inherit;
+    line-height: 1.38;
+    text-align: right;
+}
+
+.navigation__link.active {
+    font-weight: 500;
+}
+
+.navigation__link:hover {
+    opacity: 0.8;
+}
+
+@media (max-width: 768px) {
+    .navigation__container {
+        display: none;
+    }
+}
