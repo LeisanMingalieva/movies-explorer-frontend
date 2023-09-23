@@ -1,5 +1,4 @@
-import { moviesUrl } from "./constants";
-const BASE_URL = 'https://api.movies-andriyanova.nomoreparties.co';
+import { moviesUrl, BASE_URL } from "./constants";
 
 const checkResponse = res => {
     if(res.ok) {
@@ -35,30 +34,43 @@ export function authorize ({ email, password }) {
     })
 }
 
-export function tokenCheck() {
+export function updateUser ({ name, email }) {
+    return request('/users/me', {
+        method: 'PATCH',
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${localStorage.getItem('token')}`
+        },
+        body: JSON.stringify({ name, email })
+    })
+}
+
+export function tokenCheck(token) {
     return request('/users/me', {
         method: 'GET',
         headers: {
             'Accept': 'application/json',
             'Content-Type': 'application/json',
-            'Authorization': `Bearer ${localStorage.getItem('token')}`
+            // 'Authorization': `Bearer ${localStorage.getItem('token')}`
+            'Authorization': `Bearer ${token}`
         }
     })
     // .then(data => data)
 }
 
-export function getUserData() {
-    return request('/users/me', {
-        method: 'GET',
-        headers: {
-            'Content-Type': 'application/json',
-	        'Accept': 'application/json',
-            'Authorization': `Bearer ${localStorage.getItem('token')}`
-        }
-    })
-}
+// export function getUserData() {
+//     return request('/users/me', {
+//         method: 'GET',
+//         headers: {
+//             'Content-Type': 'application/json',
+// 	        'Accept': 'application/json',
+//             'Authorization': `Bearer ${localStorage.getItem('token')}`
+//         }
+//     })
+// }
 
-export function getUserMovies() {
+export function getSavedMovies() {
     return request('/movies', {
         method: 'GET',
         headers: {
@@ -69,7 +81,7 @@ export function getUserMovies() {
     })
 }
 
-export const saveUserMovie = (movie) => {
+export const saveMovie = (movie) => {
     return request('/movies', {
         method: 'POST',
         headers: {
@@ -83,18 +95,19 @@ export const saveUserMovie = (movie) => {
             duration: movie.duration,
             year: movie.year,
             description: movie.description,
-            image: {url: `${moviesUrl}${movie.image.url}`},
+            //image: {url: `${moviesUrl}${movie.image.url}`},
+            image: `${moviesUrl}${movie.image.url}`,
             trailerLink: movie.trailerLink,
-            nameRu: movie.nameRu,
-            nameEn: movie.nameEn,
+            nameRU: movie.nameRU,
+            nameEN: movie.nameEN,
             thumbnail: `${moviesUrl}${movie.image.url}`,
             movieId: movie.id
         })
     })
-    .then(savedMovie => movie.id = savedMovie._id)
+    //.then(savedMovie => movie.id = savedMovie._id)
 }
 
-export const deleteUserMovie = (movieId) => {
+export const deleteMovie = (movieId) => {
     return request(`/movies/${movieId}`, {
         method: 'DELETE',
         headers: {

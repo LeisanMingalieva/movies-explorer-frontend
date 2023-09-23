@@ -1,0 +1,38 @@
+.input__label {
+    color: #A0A0A0;
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.input__form {
+    border-radius: 8px;
+    background-color: transparent;
+    box-sizing: border-box;
+    padding: 15px;
+    border: 0;
+    width: 100%;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: normal;
+    height: 46px;
+}
+
+.input__form:focus {
+    color: black; 
+    outline: solid #000 1px;
+}
+
+.input__span {
+    font-size: 10px;
+    line-height: 12px;
+    color: #ff4062;
+    visibility: hidden;
+}
+
+.input__span-error_visible {
+    visibility: visible;
+}
+

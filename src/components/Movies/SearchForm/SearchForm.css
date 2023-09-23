@@ -53,6 +53,15 @@
     opacity: 0.8;
 }
 
+.search-form__error {
+    text-align: center;
+	font-size: 12px;
+	line-height: 12px;
+	color: #EE3465;
+	padding-top: 10px;
+	margin-bottom: -20px;
+}
+
 @media (max-width: 768px) {
     .search-form {
         padding: 79px 30px 51px;

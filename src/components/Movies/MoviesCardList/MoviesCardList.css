@@ -36,6 +36,12 @@
     opacity: 0.8;
 }
 
+.movies-list__not-found {
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 0;
+  }
+
 @media (max-width: 768px) {
     .movies-list {
         padding: 80px 30px;

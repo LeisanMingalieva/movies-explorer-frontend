@@ -8,12 +8,11 @@ import Portfolio from "./Portfolio/Portfolio";
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
 
-function Main() {
-    const [isLoggedIn, setIsLoggedIn] = React.useState(false);
+function Main({loggedIn}) {
 
     return (
         <>
-            <Header isLoggedIn={isLoggedIn}/>
+            <Header isLoggedIn={loggedIn}/>
             <main>
                 <Promo />
                 <NavTab />
