@@ -12,7 +12,6 @@ import * as MainApi from '../../utils/MainApi.js';
 import * as MoviesApi from '../../utils/MoviesApi';
 import { CurrentUserContext } from '../../contexts/CurrentUserContext';
 import ProtectedRoute from '../../utils/ProtectedRoute'
-//import { UserMoviesContext } from '../../contexts/UserMoviesContext';
 import { CONFLICT_ERROR, UNAUTHORIZATED_ERROR } from '../../utils/constants';
 
 import './App.css';
@@ -32,18 +31,6 @@ function App() {
   const [savedMovies, setSavedMovies] = useState([]);
   const [errorMessage, setErrorMessage] = useState(false);
   const location = useLocation();
-
-  //получение данных пользователя с сервера
-  // useEffect(() => {
-  //   if(isLoggedIn) {
-  //     MainApi
-  //     .getUserData()
-  //     .then((userData) => {
-  //       setCurrentUser(userData);
-  //     })
-  //     .catch(console.log)
-  //   }
-  // }, [isLoggedIn]);
 
   useEffect(() => {
     const token = localStorage.getItem('token')
@@ -371,17 +358,17 @@ function App() {
     if (localSavedMovies) {
       return localSavedMovies.find(
         (movieItem) => movieItem.movieId === movie.id
-      )._id;
+      );
     }
   }
 
   function handleDeleteMovie(movie) {
     MainApi
-      .deleteMovie(movie)
-      .then((res) => {
+      .deleteMovie(movie._id)
+      .then(() => {
         setAllSavedMovies((state) =>
-          state.filter((savedMovie) => savedMovie._id !== movie)
-        );
+          state.filter((savedMovie) => savedMovie._id !== movie._id)
+        );        
       })
       .catch(() => {
         setIsInfoTooltipOpen(true);

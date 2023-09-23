@@ -95,7 +95,6 @@ export const saveMovie = (movie) => {
             duration: movie.duration,
             year: movie.year,
             description: movie.description,
-            //image: {url: `${moviesUrl}${movie.image.url}`},
             image: `${moviesUrl}${movie.image.url}`,
             trailerLink: movie.trailerLink,
             nameRU: movie.nameRU,
