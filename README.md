@@ -1,9 +1,9 @@
-# movies-explorer-frontend
+# Movies-explorer
 
-## Фронтенд часть дипломной работы Яндекс-Практикума
-
-
-[Ссылка на пуллреквест] (https://github.com/LeisanMingalieva/movies-explorer-frontend/pull/3)
+## Дипломная работа Яндекс-Практикума
 
 
-[Ссылка на проект] (https://movies-andriyanova.nomoreparties.co)
+Ссылка на пуллреквест https://github.com/LeisanMingalieva/movies-explorer-frontend/pull/3
+
+
+Ссылка на проект https://movies-andriyanova.nomoreparties.co
