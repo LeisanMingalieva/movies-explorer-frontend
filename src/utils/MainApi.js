@@ -52,11 +52,9 @@ export function tokenCheck(token) {
         headers: {
             'Accept': 'application/json',
             'Content-Type': 'application/json',
-            // 'Authorization': `Bearer ${localStorage.getItem('token')}`
             'Authorization': `Bearer ${token}`
         }
     })
-    // .then(data => data)
 }
 
 // export function getUserData() {
@@ -103,7 +101,6 @@ export const saveMovie = (movie) => {
             movieId: movie.id
         })
     })
-    //.then(savedMovie => movie.id = savedMovie._id)
 }
 
 export const deleteMovie = (movieId) => {

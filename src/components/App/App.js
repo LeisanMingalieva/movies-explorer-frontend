@@ -13,7 +13,6 @@ import * as MoviesApi from '../../utils/MoviesApi';
 import { CurrentUserContext } from '../../contexts/CurrentUserContext';
 import ProtectedRoute from '../../utils/ProtectedRoute'
 import { CONFLICT_ERROR, UNAUTHORIZATED_ERROR } from '../../utils/constants';
-
 import './App.css';
 
 
@@ -91,13 +90,13 @@ function App() {
         savedFilteredShortMovies.length === 0 && setNotFound(true);
         setSavedMovies(savedFilteredShortMovies)
       } else setNotFound(true);
-    } else if (isLoggedIn && !savedShortMovies) {
+     } else if (isLoggedIn && !savedShortMovies) {
       const savedFilteredMovies = JSON.parse(
         localStorage.getItem('saved-filtered-movies')
       )
       savedFilteredMovies !== null && setSavedMovies(savedFilteredMovies)
     }
-  }, [savedShortMovies])
+  }, [savedShortMovies, isLoggedIn])
 
   //выход из системы
   function signOut () {
@@ -251,11 +250,11 @@ function App() {
       if (movieToSearch) {
         setShortMoviesCheckbox(!shortMoviesCheckbox);
         localStorage.setItem("shortMoviesCheckbox", !shortMoviesCheckbox);
-      } else {
-        setIsInfoTooltipOpen(true);
-        setErrorMessage("Нужно ввести ключевое слово");
-      }
+      } 
+      setShortMoviesCheckbox(!shortMoviesCheckbox);
+      localStorage.setItem("shortMoviesCheckbox", !shortMoviesCheckbox);
     }
+    
     if (location.pathname === "/saved-movies") {
       const savedFilteredShortMovies = JSON.parse(
         localStorage.getItem("saved-filtered-short-movies")
@@ -268,10 +267,6 @@ function App() {
         setErrorMessage("Нет сохраненных фильмов");
       } else {
         setSavedShortMovies(!savedShortMovies);
-        if (savedMoviesArray.length === 0) {
-          setIsInfoTooltipOpen(true);
-          setErrorMessage("Нет сохраненных фильмов");
-        }
         if (!savedFilteredShortMovies) {
           localStorage.setItem("savedShortMoviesCheckbox", !savedShortMovies);
           const savedShortMoviesArray = savedMoviesArray.filter(
@@ -368,7 +363,7 @@ function App() {
       .then(() => {
         setAllSavedMovies((state) =>
           state.filter((savedMovie) => savedMovie._id !== movie._id)
-        );        
+        );       
       })
       .catch(() => {
         setIsInfoTooltipOpen(true);
@@ -387,77 +382,10 @@ function App() {
       handleDeleteMovie(getMovieToDeleteId(movie));
     }
   }
-  // useEffect(() => {
-  //   if(isLoggedIn && currentUser) {
-  //     MoviesApi
-  //       .getMovies()
-  //       .then((moviesList) => {
-  //         setMoviesList(moviesList)
-  //       })
-  //       .catch(console.log)
-  //   }
-  // }, [isLoggedIn])
-  
-  // const handleMoviesLikes = (movie) => {
-  //   MainApi
-  //     .saveUserMovie(movie)
-  //     .then((newMovie) => {
-  //       setSavedMoviesList([newMovie, ...savedMoviesList]);
-  //     })
-  //     .catch((err) => {
-  //       console.log(err)
-  //     })
-  // }
-
-  // const handleMoviesDislikes = (movie) => {
-  //   const savedMovies = savedMoviesList.find((item) => item.movieId === movie.id || item.movieId === movie.movieId);
-  //   MainApi
-  //     .deleteUserMovie(savedMovies._id)
-  //     .then(() => {
-  //       const moviesList = savedMovies.filter(i => {
-  //         return (!(movie.id === i.movieId || movie.movieId === i.movieId));
-  //       })
-  //       setSavedMoviesList(moviesList);
-  //     })
-  //     .catch((err) => {
-  //       console.log(err)
-  //     })
-  // }
-
-  //Проверка валидности токена
-  // const tokenCheck = () => {
-  //   const token = localStorage.getItem("token")
-  //     if (token) {
-  //       MainApi
-  //         .tokenCheck()
-  //         .then(() => {
-  //           setIsLoggedIn(true)
-  //           navigate('/movies');
-  //         })
-  //     }
-  //   }
-  
-    // useEffect(() => {
-    //   tokenCheck();
-    // }, [])
-
+ 
   function closePopup() {
     setIsInfoTooltipOpen(false)
   }
-
-  // useEffect(() => {
-  //   if(isLoggedIn && currentUser) {
-  //     MainApi
-  //       .getUserMovies()
-  //       .then((movies) => {
-  //         const userSavedMovies = movies.filter(movie => movie.owner === currentUser._id);
-  //         setSavedMoviesList(userSavedMovies);
-  //       })
-  //       .catch((err) => {
-  //         console.log(err)
-  //       })
-  //   }
-  // }, [currentUser, isLoggedIn])
 
   return (
     <CurrentUserContext.Provider value={currentUser}>
@@ -468,10 +396,6 @@ function App() {
             <ProtectedRoute
               element={Movies}
               loggedIn={isLoggedIn}
-              //savedMoviesList={savedMoviesList}
-              //onMoviesLikeClick = {handleMoviesLikes}
-              //onMoviesDislikeClick = {handleMoviesDislikes}
-              //moviesList={moviesList}
               onChooseShortMovies={handleChooseShortMovies}
               shortMoviesCheck={shortMoviesCheckbox}
               notFound={notFound}
@@ -492,8 +416,6 @@ function App() {
             <ProtectedRoute
               element={SavedMovies}
               loggedIn={isLoggedIn}
-              //savedMoviesList={savedMoviesList}
-              //onMoviesDislikeClick = {handleMoviesDislikes}
               onChooseShortMovies={handleChooseShortMovies}
               savedShortMoviesCheck={savedShortMovies}
               notFound={notFound}
@@ -516,7 +438,7 @@ function App() {
           errorMessage={errorMessage}
           isOpen={isInfoTooltipOpen}
           onClose={closePopup}
-      />
+        />
       </div>
     </CurrentUserContext.Provider>
   );

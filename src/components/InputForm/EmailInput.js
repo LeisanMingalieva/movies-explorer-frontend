@@ -1,7 +1,6 @@
 import "./InputForm.css";
+import { EMAIL_REGEX, INVALID_EMAIL_MESSAGE } from "../../utils/constants";
 
-const EMAIL_REGEX = /([a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z0-9_-]+)/
-const INVALID_EMAIL_MESSAGE = `В адресе электронной почты должен присутствовать символ '@' и минимум 2 символа`;
 
 const EmailInput = ({
     type,

@@ -4,8 +4,15 @@ import Footer from "../Footer/Footer";
 import MoviesCardList from "../Movies/MoviesCardList/MoviesCardList";
 import SearchForm from "../Movies/SearchForm/SearchForm";
 
-function SavedMovies({ loggedIn, savedMoviesArray, deleteMovie, onSearchMovie, notFound, onChooseShortMovies, savedShortMoviesCheck }) {
-
+function SavedMovies({ 
+    loggedIn,
+    savedMoviesArray,
+    deleteMovie,
+    onSearchMovie,
+    notFound,
+    onChooseShortMovies,
+    savedShortMoviesCheck
+}) {
     return (
         <>
             <Header isLoggedIn={loggedIn} />

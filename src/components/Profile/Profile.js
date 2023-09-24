@@ -3,9 +3,9 @@ import { NavLink } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import Header from "../Header/Header";
 import { CurrentUserContext } from "../../contexts/CurrentUserContext";
-import './Profile.css';
 import NameInput from "../InputForm/NameInput";
 import EmailInput from "../InputForm/EmailInput";
+import './Profile.css';
 
 function Profile({ onSignOut, handleUpdateProfile, loggedIn }) {
     const currentUser = useContext(CurrentUserContext);
@@ -86,7 +86,6 @@ function Profile({ onSignOut, handleUpdateProfile, loggedIn }) {
                 </section>
             </main>        
         </>
-            
     )
 }
 

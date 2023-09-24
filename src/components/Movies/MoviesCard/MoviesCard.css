@@ -33,18 +33,6 @@
     margin: 0;
 }
 
-/* .movie__button {
-    width: 16px;
-    height: 16px;
-    border: none;
-    cursor: pointer;
-    padding: 0;
-    background-image: url('../../../images/save8d.svg');
-    background-repeat: no-repeat;
-    background-position: center 25%;
-    box-shadow: 0 0 5px rgba(0, 0, 0, .3);
-    border-radius: 50%;
-} */
 .movie__button {
     width: 16px;
     height: 16px;
@@ -59,9 +47,6 @@
     opacity: 0.8;
 }
 
-/* .movie__button_saved {
-    background-image: url('../../../images/save8.svg');    
-} */
 .movie__button_saved {
     background-image: url('../../../images/save8d.svg'); 
     background-position: center 25%;

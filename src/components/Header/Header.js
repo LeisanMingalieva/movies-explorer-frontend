@@ -1,12 +1,12 @@
 import React from 'react';
-import {NavLink, useLocation} from 'react-router-dom';
+import { NavLink, useLocation } from 'react-router-dom';
 import logo from '../../images/logo.svg';
 import BurgerMenu from './BurgerMenu/BurgerMenu';
 import Navigation from './Navigation/Navigation';
 import './Header.css';
 
 
-function Header({isLoggedIn}) {
+function Header({ isLoggedIn }) {
     const url = useLocation();
     const header = url.pathname === '/movies' || url.pathname === '/saved-movies' || url.pathname === '/profile'
     ? 'header_login-movies' 

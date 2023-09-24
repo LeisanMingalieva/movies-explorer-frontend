@@ -1,6 +1,5 @@
 import "./InputForm.css";
-
-const NAME_REGEX = /^[a-zA-Zа-яА-Я\s-]*$/;
+import { NAME_REGEX } from "../../utils/constants";
 
 const NameInput = ({
     type,
