@@ -4,8 +4,13 @@ import AuthForm from "../AuthForm/AuthForm";
 import EmailInput from "../InputForm/EmailInput";
 import PasswordInput from "../InputForm/PasswordInput";
 import NameInput from "../InputForm/NameInput";
+import { useLocation } from 'react-router-dom';
 
-function Register ({handleRegister}) {
+function Register ({handleRegister, loggedIn}) {
+  const url = useLocation();
+  if(url.pathname === '/signup' && !loggedIn) {
+    url.pathname = '/'
+  }
   const {
     register,
 		handleSubmit,

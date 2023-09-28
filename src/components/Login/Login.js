@@ -3,8 +3,14 @@ import { useForm } from "react-hook-form";
 import AuthForm from "../AuthForm/AuthForm";
 import EmailInput from "../InputForm/EmailInput";
 import PasswordInput from "../InputForm/PasswordInput";
+import {useLocation} from 'react-router-dom';
 
-const Login = ({ handleLogin }) => {
+const Login = ({ handleLogin, loggedIn }) => {
+  const url = useLocation();
+  if(url.pathname === '/signin' && !loggedIn) {
+    url.pathname = '/'
+  }
+
     const {
       register,
       handleSubmit,

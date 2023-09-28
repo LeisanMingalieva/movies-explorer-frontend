@@ -364,7 +364,7 @@ function App() {
         setAllSavedMovies((state) =>
           state.filter((savedMovie) => savedMovie._id !== movie._id)
         );
-        })
+      })
       .catch(() => {
         setIsInfoTooltipOpen(true);
         setErrorMessage("При удалении фильма произошла ошибка.");
@@ -407,10 +407,10 @@ function App() {
             />
            }/>
           <Route path='signup' element={ 
-            <Register handleRegister={handleRegister} /> 
+            <Register handleRegister={handleRegister} loggedIn={isLoggedIn} /> 
           }/>
           <Route path='signin' element={ 
-            <Login handleLogin={handleLogin} /> 
+            <Login handleLogin={handleLogin} loggedIn={isLoggedIn}/> 
           }/>
           <Route path='saved-movies' element={ 
             <ProtectedRoute
