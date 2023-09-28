@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
-import MoviesCard from '../MoviesCard/MoviesCard';
+import MoviesCard from '../Movies/MoviesCard/MoviesCard';
 import { useLocation } from "react-router-dom";
+import { LARGE_SIZE, MEDIUM_SIZE, TABLET_SIZE } from '../../utils/constants';
+import { CARDS_SIZE_L, CARDS_SIZE_M, CARDS_SIZE_XL, CARDS_SIZE_S } from "../../utils/constants";
 import './MoviesCardList.css';
 
 function MoviesCardList({ moviesArray, isSaved, savedMoviesArray, notFound, onSaveMovie, deleteMovie}) {
@@ -14,14 +16,14 @@ function MoviesCardList({ moviesArray, isSaved, savedMoviesArray, notFound, onSa
     };
     
     if(location.pathname === '/movies') {
-      if (windowWidth >= 1280) {
-        setNumCardsToShow(16);
-      } else if (windowWidth < 1280 && windowWidth > 989) {
-        setNumCardsToShow(12);
-      } else if (windowWidth < 989 && windowWidth >= 768) {
-        setNumCardsToShow(8);
+      if (windowWidth >= LARGE_SIZE) {
+        setNumCardsToShow(CARDS_SIZE_XL);
+      } else if (windowWidth < LARGE_SIZE && windowWidth > MEDIUM_SIZE) {
+        setNumCardsToShow(CARDS_SIZE_L);
+      } else if (windowWidth < MEDIUM_SIZE && windowWidth >= TABLET_SIZE) {
+        setNumCardsToShow(CARDS_SIZE_M);
       } else {
-        setNumCardsToShow(5);
+        setNumCardsToShow(CARDS_SIZE_S);
       }
     }
 
@@ -32,11 +34,11 @@ function MoviesCardList({ moviesArray, isSaved, savedMoviesArray, notFound, onSa
   }, [windowWidth, location, moviesArray]);
   
   const handleLoadMoreClick = () => {
-    if (windowWidth >= 1280) {
+    if (windowWidth >= LARGE_SIZE) {
       setNumCardsToShow(numCardsToShow + 4);
-    } else if (windowWidth < 1280 && windowWidth > 989) {
+    } else if (windowWidth < LARGE_SIZE && windowWidth > MEDIUM_SIZE) {
       setNumCardsToShow(numCardsToShow + 4);
-    } else if (windowWidth < 989 && windowWidth >= 768) {
+    } else if (windowWidth < MEDIUM_SIZE && windowWidth >= TABLET_SIZE) {
       setNumCardsToShow(numCardsToShow + 4);
     } else {
       setNumCardsToShow(numCardsToShow + 2);

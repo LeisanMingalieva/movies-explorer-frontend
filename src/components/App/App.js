@@ -11,8 +11,8 @@ import InfoToolTip from '../InfoToolTip/InfoToolTip';
 import * as MainApi from '../../utils/MainApi.js';
 import * as MoviesApi from '../../utils/MoviesApi';
 import { CurrentUserContext } from '../../contexts/CurrentUserContext';
-import ProtectedRoute from '../../utils/ProtectedRoute'
-import { CONFLICT_ERROR, UNAUTHORIZATED_ERROR } from '../../utils/constants';
+import ProtectedRoute from '../ProtectedRoute/ProtectedRoute'
+import { CONFLICT_ERROR, UNAUTHORIZATED_ERROR, SHORT_MOVIES } from '../../utils/constants';
 import './App.css';
 
 
@@ -221,7 +221,7 @@ function App() {
             JSON.stringify(movieToSearch)
           );
           const filteredShortMovies = filteredMovies.filter(
-            (movie) => movie.duration <= 40
+            (movie) => movie.duration <= SHORT_MOVIES
           );
           localStorage.setItem(
             'filtered-short-movies',
@@ -270,7 +270,7 @@ function App() {
         if (!savedFilteredShortMovies) {
           localStorage.setItem("savedShortMoviesCheckbox", !savedShortMovies);
           const savedShortMoviesArray = savedMoviesArray.filter(
-            (movie) => movie.duration <= 40
+            (movie) => movie.duration <= SHORT_MOVIES
           );
           if (!savedShortMovies) {
             setSavedMovies(savedShortMoviesArray);
@@ -301,7 +301,7 @@ function App() {
         JSON.stringify(savedSearchedMovies)
       );
       const savedSearchedShortMovies = savedSearchedMovies.filter(
-        (movie) => movie.duration <= 40
+        (movie) => movie.duration <= SHORT_MOVIES
       );
       localStorage.setItem(
         "saved-filtered-short-movies",
@@ -363,8 +363,8 @@ function App() {
       .then(() => {
         setAllSavedMovies((state) =>
           state.filter((savedMovie) => savedMovie._id !== movie._id)
-        );       
-      })
+        );
+        })
       .catch(() => {
         setIsInfoTooltipOpen(true);
         setErrorMessage("При удалении фильма произошла ошибка.");
