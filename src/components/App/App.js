@@ -364,6 +364,7 @@ function App() {
         setAllSavedMovies((state) =>
           state.filter((savedMovie) => savedMovie._id !== movie._id)
         );
+        localStorage.removeItem('saved-filtered-short-movies')
       })
       .catch(() => {
         setIsInfoTooltipOpen(true);
