@@ -71,17 +71,6 @@ function App() {
   }, [shortMoviesCheckbox, isLoggedIn]);
 
   useEffect(() => {
-    if(location.pathname !== '/saved-movies') {
-      localStorage.removeItem('saved-filtered-movies')
-      localStorage.removeItem('saved-filtered-short-movies')
-      localStorage.removeItem('savedShortMoviesCheckbox')
-      setSavedShortMovies(false)
-    } else {
-      updateSavedMovies();
-    }
-  }, [location]);
-
-  useEffect(() => {
     if(isLoggedIn && savedShortMovies) {
       const savedFilteredShortMovies = JSON.parse(
         localStorage.getItem('saved-filtered-short-movies')
@@ -97,6 +86,18 @@ function App() {
       savedFilteredMovies !== null && setSavedMovies(savedFilteredMovies)
     }
   }, [savedShortMovies, isLoggedIn])
+
+  useEffect(() => {
+    if(location.pathname !== '/saved-movies') {
+      localStorage.removeItem('saved-filtered-movies')
+      localStorage.removeItem('saved-filtered-short-movies')
+      localStorage.removeItem('savedShortMoviesCheckbox')
+      setSavedShortMovies(false)
+    } else {
+      updateSavedMovies();
+    }
+  }, [location]);
+
 
   //выход из системы
   function signOut () {
@@ -250,11 +251,11 @@ function App() {
       if (movieToSearch) {
         setShortMoviesCheckbox(!shortMoviesCheckbox);
         localStorage.setItem("shortMoviesCheckbox", !shortMoviesCheckbox);
-      } 
-      setShortMoviesCheckbox(!shortMoviesCheckbox);
-      localStorage.setItem("shortMoviesCheckbox", !shortMoviesCheckbox);
-    }
-    
+      }
+        setShortMoviesCheckbox(!shortMoviesCheckbox);
+        localStorage.setItem("shortMoviesCheckbox", !shortMoviesCheckbox);
+      }      
+        
     if (location.pathname === "/saved-movies") {
       const savedFilteredShortMovies = JSON.parse(
         localStorage.getItem("saved-filtered-short-movies")
@@ -324,12 +325,19 @@ function App() {
         setSavedMovies(res);
         setAllSavedMovies(res);
         localStorage.setItem('allSavedMovies', JSON.stringify(res));
+      
       })
       .catch((err) => console.log(err))
   }
 
   function updateSavedMovies() {
-    setSavedMovies(JSON.parse(localStorage.getItem('allSavedMovies')))
+    const localSavedMovies = JSON.parse(localStorage.getItem('allSavedMovies'));
+    if (savedShortMovies) {
+      const filteredShortMovies = localSavedMovies.filter((movie) => movie.duration <= SHORT_MOVIES);
+      setSavedMovies(filteredShortMovies);
+    } else {
+      setSavedMovies(localSavedMovies);
+    }
   }
 
   function updateAllSavedMovies() {
@@ -362,8 +370,9 @@ function App() {
       .deleteMovie(movie._id)
       .then(() => {
         setAllSavedMovies((state) =>
-          state.filter((savedMovie) => savedMovie._id !== movie._id)
+        state.filter((savedMovie) => savedMovie._id !== movie._id)
         );
+        
         localStorage.removeItem('saved-filtered-short-movies')
       })
       .catch(() => {
