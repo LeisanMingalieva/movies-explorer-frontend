@@ -23,7 +23,7 @@ function SearchForm ({ searchMovies, onFilter, movieCheckboxStatus }) {
       
     return (
         <div className="search-form">
-            <form onSubmit={handleSubmit(submitData)} className="search-form__container" name="search">
+            <form onSubmit={handleSubmit(submitData)} className="search-form__container" name="search" noValidate>
                 <input
                     {...register('search', {
                         required: 'Нужно ввести ключевое слово',
