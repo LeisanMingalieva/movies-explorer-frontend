@@ -7,3 +7,7 @@
 
 
 Ссылка на проект https://movies-andriyanova.nomoreparties.co
+
+Movies-explorer - cервис, в котором можно найти фильмы по запросу и сохранить в личном кабинете.
+
+
