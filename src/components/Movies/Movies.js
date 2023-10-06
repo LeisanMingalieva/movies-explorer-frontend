@@ -19,6 +19,7 @@ function Movies({ loggedIn, savedMovies, handleMovieLikeStatus, handleDeleteMovi
   const [errorMessage, setErrorMessage] = useState('');
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   const [moviesToShow, setMoviesToShow] = useState(0);
+  const [notFound, setNotFound] = useState(false);
   const location = useLocation();
      
   useEffect(() => {
@@ -54,7 +55,7 @@ function Movies({ loggedIn, savedMovies, handleMovieLikeStatus, handleDeleteMovi
 
     function handleFilterMovies(moviesList, movieToSearch, short) {
       const movies = moviesFilter(moviesList, movieToSearch); 
-      (movies.length === 0) ? (setIsSuccessfulRequest(false)) : (setIsSuccessfulRequest(true));
+      (movies.length === 0 && setNotFound(true)) ? (setIsSuccessfulRequest(false)) : (setIsSuccessfulRequest(true));
       setFilteredMovies(movies);
       setFilteredMoviesShortAndSearch(short ? moviesFilterDuration(movies) : movies);
       localStorage.setItem('filtered-movies', JSON.stringify(movies));
@@ -112,7 +113,7 @@ function Movies({ loggedIn, savedMovies, handleMovieLikeStatus, handleDeleteMovi
           localStorage.getItem('filtered-movies')
         );
         setFilteredMovies(movies);
-        (movies.length === 0) ? (setIsSuccessfulRequest(false)) : (setIsSuccessfulRequest(true));
+        (movies.length === 0 && setNotFound(true)) ? (setIsSuccessfulRequest(false)) : (setIsSuccessfulRequest(true));
         if (localStorage.getItem('movie-checkbox-status') === 'true') {
           setMovieCheckboxStatus(true);
           setFilteredMoviesShortAndSearch(moviesFilterDuration(movies));
@@ -154,8 +155,12 @@ function Movies({ loggedIn, savedMovies, handleMovieLikeStatus, handleDeleteMovi
               handleDeleteMovie={handleDeleteMovie}
               moviesToShow={moviesToShow}
             />
-          : <p className="movies__error">Ничего не найдено</p>}
-          <span className="movies__error">{errorMessage}</span>
+          : (
+            notFound && (
+              <p className="movies__error">Ничего не найдено</p>
+            )
+          )}
+          
           {moviesToShow < filteredMoviesShortAndSearch.length && (<button onClick={handleLoadMoreClick} type="button" className="movies__button">Ещё</button>)}
         </main>
         <Footer />         

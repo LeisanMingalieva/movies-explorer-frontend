@@ -12,6 +12,14 @@ function SavedMovies({ loggedIn, savedMovies, handleDeleteMovie }) {
     const [filteredMoviesShortAndSearch, setFilteredMoviesShortAndSearch] = useState(savedMovies);
     const [isSuccessRequest, setIsSuccessRequest] = useState(true);
     const [movieToSearch, setMovieToSearch] = useState('');
+    //const [notFound, setNotFound] = useState(false);
+
+    function handleSearchMovies(movieToSearch, short) {
+        const movies = moviesFilter(savedMovies, movieToSearch)
+        setFilteredMovies(movies)
+        setMovieToSearch(movieToSearch)
+        setFilteredMoviesShortAndSearch(short ? moviesFilterDuration(movies) : movies)
+    }
 
     useEffect(() => {
         if(shortMovies) {
@@ -29,13 +37,6 @@ function SavedMovies({ loggedIn, savedMovies, handleDeleteMovie }) {
         }
     }, [filteredMoviesShortAndSearch])
 
-    function handleSearchMovies(movieToSearch, short) {
-        const movies = moviesFilter(savedMovies, movieToSearch)
-        setFilteredMovies(movies)
-        setMovieToSearch(movieToSearch)
-        setFilteredMoviesShortAndSearch(short ? moviesFilterDuration(movies) : movies)
-    }
-    
     function handleShortMovies() {
         setShortMovies(!shortMovies);
         if (!shortMovies) {
@@ -60,8 +61,7 @@ function SavedMovies({ loggedIn, savedMovies, handleDeleteMovie }) {
                     savedMovies={savedMovies}
                     handleDeleteMovie={handleDeleteMovie}
                 />
-                : <p className="saved-movies__error ">Ничего не найдено</p>
-                }                
+                : <p className="saved-movies__error">Ничего не найдено</p>}                
             </main>
             <Footer/>
         </>
