@@ -1,11 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 import './FilterCheckbox.css';
 
-function FilterCheckbox({ onChooseShortMovies, shortMoviesCheck }) {
-    const [movieToSearch, setMovieToSearch] = useState("");
-    const handleChooseMovieDuration = () => {
-        onChooseShortMovies(movieToSearch);
-      };
+function FilterCheckbox({ onFilter, shortMoviesCheck }) {
+   
     return (
             <div className="filter">
                 <form className="filter__container">
@@ -13,8 +10,8 @@ function FilterCheckbox({ onChooseShortMovies, shortMoviesCheck }) {
                         className="filter__checkbox"
                         type="checkbox"
                         id="toggle"
-                        onChange={handleChooseMovieDuration} 
-                        checked={shortMoviesCheck && 'checked'}                 
+                        onChange={onFilter} 
+                        checked={shortMoviesCheck}                 
                     />
                     <span className="filter__tumbler"></span>
                     <span className="filter__text">Короткометражки</span>
