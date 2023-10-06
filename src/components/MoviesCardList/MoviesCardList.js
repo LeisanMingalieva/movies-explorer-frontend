@@ -1,9 +1,9 @@
 import React from "react";
 import MoviesCard from '../MoviesCard/MoviesCard';
-import Preloader from "../Movies/Preloader/Preloader";
+import Preloader from "../Preloader/Preloader";
 import './MoviesCardList.css';
 
-function MoviesCardList({ moviesToShow, savedMovies, movies, handleMovieLikeStatus, handleDeleteMovie, loading}) {
+function MoviesCardList({ moviesToShow, savedMovies, movies, handleMovieLikeStatus, handleDeleteMovie, isPreloader}) {
   
   function getSavedMovies(savedMovies, movie) {
     return savedMovies.find((savedMovie) => savedMovie.movieId === movie.id)
@@ -11,7 +11,7 @@ function MoviesCardList({ moviesToShow, savedMovies, movies, handleMovieLikeStat
     
     return (
       <section className="movies-list">
-        {loading && <Preloader/>}
+        {isPreloader && <Preloader/>}
         {
           movies.slice(0, moviesToShow).map((movie) => (
             <MoviesCard
