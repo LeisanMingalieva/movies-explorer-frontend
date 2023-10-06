@@ -48,14 +48,14 @@
 }
 
 .movie__button_saved {
-    background-image: url('../../../images/save8d.svg'); 
+    background-image: url('../../images/save8d.svg'); 
     background-position: center 25%;
     background-repeat: no-repeat;
     box-shadow: 0 0 5px rgba(0, 0, 0, .3);
     border-radius: 50%;
 }
 .movie__button_saved-active {
-    background-image: url('../../../images/save8.svg');    
+    background-image: url('../../images/save8.svg');    
     background-position: center 25%;
     background-repeat: no-repeat;
     box-shadow: 0 0 5px rgba(0, 0, 0, .3);
@@ -63,7 +63,7 @@
 }
 
 .movie__button_delete {
-    background-image: url('../../../images/delete.svg');
+    background-image: url('../../images/delete.svg');
     background-size: 16px 16px;
     background-color: white;
     border: none;

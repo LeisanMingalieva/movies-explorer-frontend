@@ -57,16 +57,16 @@ export function tokenCheck(token) {
     })
 }
 
-// export function getUserData() {
-//     return request('/users/me', {
-//         method: 'GET',
-//         headers: {
-//             'Content-Type': 'application/json',
-// 	        'Accept': 'application/json',
-//             'Authorization': `Bearer ${localStorage.getItem('token')}`
-//         }
-//     })
-// }
+export function getUserData() {
+    return request('/users/me', {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json',
+	        'Accept': 'application/json',
+            'Authorization': `Bearer ${localStorage.getItem('token')}`
+        }
+    })
+}
 
 export function getSavedMovies() {
     return request('/movies', {
