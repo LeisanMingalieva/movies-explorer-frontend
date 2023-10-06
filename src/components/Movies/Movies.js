@@ -69,7 +69,6 @@ function Movies({ loggedIn, savedMovies, handleMovieLikeStatus, handleDeleteMovi
       } else {
         setFilteredMoviesShortAndSearch(filteredMovies);
       }
-      localStorage.setItem('movie-checkbox-status', !movieCheckboxStatus);
     }
 
     useEffect(() => {
