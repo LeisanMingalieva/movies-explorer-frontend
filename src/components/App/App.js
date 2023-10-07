@@ -143,7 +143,10 @@ function App() {
       .then((res) => { 
         setSavedMoviesList([...savedMoviesList, res]);
       })
-      .catch((err) => (console.log(err)));
+      .catch(() => {
+        setIsInfoTooltipOpen(true);
+        setErrorMessage("При сохранении фильма произошла ошибка.");
+      });
   }
 
   //удаление фильмов
