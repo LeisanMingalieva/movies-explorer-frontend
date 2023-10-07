@@ -9,6 +9,7 @@ import * as MoviesApi from '../../utils/MoviesApi';
 import { LARGE_SIZE, MEDIUM_SIZE, TABLET_SIZE } from '../../utils/constants';
 import { CARDS_SIZE_L, CARDS_SIZE_M, CARDS_SIZE_XL, CARDS_SIZE_S } from "../../utils/constants";
 import './Movies.css'
+import Preloader from "../Preloader/Preloader";
 
 function Movies({ loggedIn, savedMovies, handleMovieLikeStatus, handleDeleteMovie }) {
   const [filteredMovies, setFilteredMovies] = useState([]);
@@ -145,6 +146,7 @@ function Movies({ loggedIn, savedMovies, handleMovieLikeStatus, handleDeleteMovi
             onFilter={handleShortMovies}
             movieCheckboxStatus={movieCheckboxStatus}
           />
+          {isPreloader && <Preloader />}
           {isSuccessfulRequest
           ? <MoviesCardList 
               isPreloader={isPreloader}
